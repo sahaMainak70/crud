@@ -18,17 +18,23 @@
         <div class="logo">
             <img src="{{ asset('images/10.png') }}" alt="">
         </div>
-        <div class="menu-toggle">
-            <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="crud-container">
+        <div class="crud">
+            <h2>Create</h2>
+            <p>Create new records in the database.</p>
         </div>
-        <div class="menu">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Create</a></li>
-                <li><a href="">Read</a></li>
-                <li><a href="#">Update</a></li>
-                <li><a href="#">Delete</a></li>
-            </ul>
+        <div class="crud">
+            <h2>Read</h2>
+            <p>Retrieve and view existing records from the database.</p>
+        </div>
+        <div class="crud">
+            <h2>Update</h2>
+            <p>Update existing records in the database.</p>
+        </div>
+        <div class="crud">
+            <h2>Delete</h2>
+            <p>Delete records from the database.</p>
         </div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
