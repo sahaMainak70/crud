@@ -11,18 +11,18 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     background-color: #182e6c;
-    
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1vw 2vw; /* Adjust padding */
+    padding: 1vw 2vw;
     background-color: #182e6c;
     height: 5vw;
     width: 100vw;
     overflow: hidden;
+    /* z-index: 100; */
 }
 
 .navbar .logo {
@@ -40,8 +40,56 @@ body {
     object-fit: cover;
 }
 
+.navbar .menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Adjust alignment */
+    justify-content: center;
+    /* height: 6vw; */
+}
+
+.navbar .menu-toggle {
+    display: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.navbar .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* height: auto; */
+}
+
+.navbar .menu ul li {
+    margin: 0 1vw;
+    font-size: 1.5vw;
+    font-weight: 500;
+    /* height: 2.2vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5vw 1vw;
+    border-radius: 0.5vw;
+    transition: all 0.3s ease;
+}
+
+.navbar .menu a:hover {
+    background-color: #fff;
+    color: #182e6c;
+}
+
 .crud-container {
-    height: 85vh;
+    height: 40vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,29 +119,115 @@ body {
 }
 
 @media (max-width: 600px) {
-    * {
+    /* * {
+        scrollbar-width: thin;
+        scroll-behavior: smooth;
+        scrollbar-color: #ccc #182e6c;
+    } */
+
+    *:not(.menu-toggle) {
         scrollbar-width: thin;
         scroll-behavior: smooth;
         scrollbar-color: #ccc #182e6c;
     }
+
     .navbar {
-        height: 20vw;
+        /* position: relative; */
+        z-index: 3;
+    }
+    .navbar.active {
+        z-index: 4; /* Ensure navbar is on top when active */
+    }
+
+    .navbar .menu-toggle {
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
+        scrollbar-width: none;
+        /* padding: 1vw; */
     }
-    .navbar .logo {
-        height: 20vw;
-        width: 109vw;
+
+    .menu-toggle i {
+        font-size: 4vw;
+        text-align: center;
+        height: 4.01vw;
     }
-    .navbar .logo img {
-        height: 100vw;
+
+    .navbar .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 5vw;
+        left: 0;
+        right: 0;
+        background-color: #182e6c;
+        padding: 1vw 2vw;
         width: 100vw;
+        height: auto;
+        z-index: 2;
+        animation: slideUp 0.5s ease forwards;
     }
+
+    .navbar .menu.active {
+        display: flex;
+        z-index: 2;
+        animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar .menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar .menu ul li {
+        margin: 0.5vw 0;
+        width: 10vw;
+    }
+
+    .navbar .menu a {
+        padding: 1vw 2vw;
+        color: #fff;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .navbar .menu a:hover {
+        background-color: #fff;
+        color: #182e6c;
+    }
+
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+        }
+        to {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(-100%);
+        }
+    }
+
+    .navbar.menu-active + .crud-container {
+        margin-top: 25vw; /* Adjust this value to create space below navbar */
+    }
+
     .crud-container {
         width: 100vw;
         height: auto;
         flex-direction: column;
+        flex-wrap: wrap;
+        transition: margin-top 0.5s ease;
+        z-index: 1;
     }
     .crud {
         margin: 1vw 0;

@@ -18,6 +18,18 @@
         <div class="logo">
             <img src="{{ asset('images/10.png') }}" alt="">
         </div>
+        <div class="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Create</a></li>
+                <li><a href="#">Read</a></li>
+                <li><a href="#">Update</a></li>
+                <li><a href="#">Delete</a></li>
+            </ul>
+        </div>
     </div>
     <div class="crud-container">
         <div class="crud">
