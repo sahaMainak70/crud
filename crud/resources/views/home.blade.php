@@ -24,27 +24,27 @@
         <div class="menu">
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Create</a></li>
-                <li><a href="#">Read</a></li>
-                <li><a href="#">Update</a></li>
-                <li><a href="#">Delete</a></li>
+                {{-- <li><a href="#"></a></li> --}}
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+                {{-- <li><a href="#">Delete</a></li> --}}
             </ul>
         </div>
     </div>
     <div class="crud-container">
-        <div class="crud">
+        <div class="crud" id="create" onclick="location.href='#'">
             <h2>Create</h2>
             <p>Create new records in the database.</p>
         </div>
-        <div class="crud">
+        <div class="crud" id="read" onclick="location.href='#'">
             <h2>Read</h2>
             <p>Retrieve and view existing records from the database.</p>
         </div>
-        <div class="crud">
+        <div class="crud" id="update" onclick="location.href='#'">
             <h2>Update</h2>
             <p>Update existing records in the database.</p>
         </div>
-        <div class="crud">
+        <div class="crud" id="delete" onclick="location.href='#'">
             <h2>Delete</h2>
             <p>Delete records from the database.</p>
         </div>
