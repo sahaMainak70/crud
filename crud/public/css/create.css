@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #182e6c;
+    overflow-x: hidden;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 1vw;
+    border-radius: 0.5vw;
+}
+
+.form-container form .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5vw;
+}
+
+.form-container form h2 {
+    font-size: 2.5vw;
+}
+
+.form-container form .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 0.5vw;
+    padding: 0.5vw;
+    flex-grow: 1;
+}
+
+.form-container form input {
+    width: 35vw;
+    height: 3vw;
+    margin: 0.5vw;
+    padding: 0.5vw;
+    padding-left: 1vw;
+    font-size: 1.5vw;
+    border: none;
+    outline: none;
+    border-bottom: 0.1vw solid #ccc;
+    background-color: transparent;
+    color: #fff;
+}
+
+.form-container form label {
+    font-size: 2vw;
+    padding-left: 1vw;
+}
+
+.form-container form button {
+    width: 35vw;
+    height: 3vw;
+    margin: 0.5vw;
+    padding: 0.5vw;
+    border: 0.1vw solid #000;
+    border-radius: 0.5vw;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5vw;
+    outline: none;
+}
+
+.form-container form button:hover {
+    background-color: #fff;
+    color: #4caf50;
+    transition: all 0.5s ease;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px transparent;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        height: 10vw;
+    }
+
+    .crud-container {
+        height: 80vh;
+    }
+
+    .form-container {
+        scrollbar-width: none;
+    }
+
+    .form-container form {
+        width: 80vw;
+    }
+    .form-container form .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-container form h2 {
+        font-size: 5vw;
+    }
+
+    .form-container form label {
+        font-size: 4vw;
+    }
+
+    .form-container form input {
+        width: 80vw;
+        height: 6vw;
+        margin: 1vw;
+        padding: 1vw;
+        padding-left: 2vw;
+        font-size: 3vw;
+    }
+
+    .form-container form button {
+        width: 80vw;
+        height: 6vw;
+        margin: 1vw;
+        padding: 1vw;
+        border: 0.2vw solid #000;
+        border-radius: 1vw;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        font-size: 3vw;
+    }
+
+    .form-container form button:hover {
+        background-color: #fff;
+        color: #4caf50;
+        transition: all 0.5s ease;
+    }
+
+
+}

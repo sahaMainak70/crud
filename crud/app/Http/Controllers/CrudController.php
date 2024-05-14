@@ -10,6 +10,6 @@ class CrudController extends Controller
         return view('home');
     }
     public function create() {
-        return view('index');
+        return view('create');
     }
 }

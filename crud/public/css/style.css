@@ -22,6 +22,8 @@ body {
     height: 5vw;
     width: 100vw;
     overflow: hidden;
+    position: fixed;
+    z-index: 99;
 }
 
 .navbar .logo {
@@ -42,9 +44,8 @@ body {
 .navbar .menu {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Adjust alignment */
+    align-items: center;
     justify-content: center;
-    /* height: 6vw; */
 }
 
 .navbar .menu-toggle {
@@ -61,14 +62,12 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* height: auto; */
 }
 
 .navbar .menu ul li {
     margin: 0 1vw;
     font-size: 1.5vw;
     font-weight: 500;
-    /* height: 2.2vw; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,12 +87,12 @@ body {
 }
 
 .crud-container {
-    height: 40vw;
+    height: 43vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-top: 1.5vw; */
     flex-wrap: wrap;
+    margin-top: 5vw;
 }
 
 .crud {
@@ -127,30 +126,40 @@ body {
 #create {
     background-color: #4caf50;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #read {
     background-color: #2196f3;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #update {
     background-color: #ff9800;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #delete {
     background-color: #f44336;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 @media (max-width: 600px) {
-    /* * {
-        scrollbar-width: thin;
-        scroll-behavior: smooth;
-        scrollbar-color: #ccc #182e6c;
-    } */
-
     *:not(.menu-toggle) {
         scrollbar-width: thin;
         scroll-behavior: smooth;
@@ -158,19 +167,23 @@ body {
     }
 
     .navbar {
-        /* position: relative; */
-        /* z-index: 3; */
-        height: 15vw;
+        position: fixed;
+        align-items: flex-start;
+        height: 10vw;
+        z-index: 98;
+        top: -1vw;
     }
 
     .navbar .logo {
-        height: 15vw;
+        height: 10vw;
         width: 35vw;
+        z-index: 97;
     }
 
     .navbar .logo img {
         height: 50vw;
         width: 50vw;
+        z-index: 96;
     }
 
     .navbar .menu-toggle {
@@ -179,8 +192,8 @@ body {
         align-items: center;
         justify-content: center;
         scrollbar-width: none;
-        /* padding: 1vw; */
         padding-right: 3vw;
+        height: 10vw;
     }
 
     .menu-toggle i {
@@ -193,21 +206,30 @@ body {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 15vw;
+        top: 10vw;
         left: 0;
         right: 0;
-        background-color: #182e6c;
         padding: 1vw 2vw;
         width: 100vw;
         height: auto;
-        z-index: 0;
+        z-index: 1;
         animation: slideUp 0.5s ease forwards;
     }
 
     .navbar .menu.active {
         display: flex;
-        /* z-index: 2; */
+        z-index: 1;
         animation: slideDown 0.5s ease forwards;
+    }
+
+    .navbar.menu-active {
+        height: 30vw; 
+        transition: height 0.5s ease;
+        z-index: 99;
+    }
+
+    .navbar.menu-active ~ .crud-container {
+        margin-top: 30vw; 
     }
 
     .navbar .menu ul {
@@ -218,7 +240,7 @@ body {
 
     .navbar .menu ul li {
         margin: 0.5vw 0;
-        width: 10vw;
+        font-size: 3vw;
     }
 
     .navbar .menu a {
@@ -252,17 +274,14 @@ body {
         }
     }
 
-    .navbar.menu-active + .crud-container {
-        margin-top: 30vw; /* Adjust this value to create space below navbar */
-    }
-
     .crud-container {
         width: 100vw;
         height: auto;
         flex-direction: column;
         flex-wrap: wrap;
+        margin-top: 10vw;
         transition: margin-top 0.5s ease;
-        z-index: 2;
+        z-index: 10;
     }
     .crud {
         margin: 1vw 0;
@@ -270,31 +289,3 @@ body {
         height: 45vw;
     }
 }
-
-/* @media (min-width: 600px) and (max-width: 921px){
-    .navbar {
-        height: 20vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .navbar .logo {
-        height: 20vw;
-        width: 109vw;
-    }
-    .navbar .logo img {
-        height: 100vw;
-        width: 100vw;
-    }
-    .crud-container {
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-    .crud {
-        margin: 1vw 0;
-        width: 75vw;
-        height: 55vw;
-        flex-grow: 1;
-        font-size: 1.2vw;
-    }
-} */
